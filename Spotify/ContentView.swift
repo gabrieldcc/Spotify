@@ -21,6 +21,13 @@ struct YourProgramsDataModel: Identifiable {
     let genrer: String
 }
 
+struct ProgramsForYouDataModel: Identifiable {
+    let id: String
+    let name: String
+    let imageName: String
+    let chapterTitle: String
+}
+
 let columns = [
     GridItem(.flexible()),
     GridItem(.flexible()),
@@ -60,11 +67,36 @@ let yourProgramsData: [YourProgramsDataModel] = [
     
 ]
 
+let programsForYouData: [ProgramsForYouDataModel] = [
+        .init(id: "0",
+              name: "Braincast",
+              imageName: "tem-que-acabar",
+              chapterTitle: "Tem que acabar"),
+        
+        .init(id: "1",
+              name: "Braincast",
+              imageName: "tem-que-acabar",
+              chapterTitle: "Tem que acabar"),
+        
+        .init(id: "2",
+              name: "Braincast",
+              imageName: "tem-que-acabar",
+              chapterTitle: "Tem que acabar"),
+        
+        .init(id: "3",
+              name: "Braincast",
+              imageName: "tem-que-acabar",
+              chapterTitle: "Tem que acabar"),
+    ]
+
 struct ContentView: View {
     var body: some View {
         ZStack {
+            
             Color.black.ignoresSafeArea()
+            
             ScrollView {
+                
                 LazyVGrid(columns: columns) {
                     ForEach(headerData) { item in
                         HeaderCollectionView(data: item)
@@ -84,6 +116,23 @@ struct ContentView: View {
                         }
                     }
                 }
+                
+                Spacer(minLength: 24)
+                
+                Label("Episódios pra você", systemImage: "")
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.system(size: 28))
+                    .bold()
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 20) {
+                        ForEach(programsForYouData) { item in
+                            ProgramsForYouCollectionView(data: item)
+                        }
+                    }
+                }
+                
                 .padding()
             }.font(.system(size: 14))
         }
@@ -96,12 +145,15 @@ struct HeaderCollectionView: View {
     var body: some View {
         HStack {
             HStack {
+                
                 Spacer()
+                
                 Image(self.data.imageName)
                     .resizable()
                     .frame(width: 50, height: 50)
                     .foregroundColor(.yellow)
                     .shadow(radius: 10)
+                
                 Spacer()
                 
                 Text(self.data.name)
@@ -119,17 +171,47 @@ struct YourProgramsCollectionView: View {
     var body: some View {
         HStack{
             VStack {
+                
                 Image(self.data.imageName)
                     .resizable()
                     .frame(width: 150, height: 150)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
+                
                 Label(self.data.genrer, systemImage: "")
                     .foregroundStyle(.green)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                
                 Label(self.data.name, systemImage: "")
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                
                 Label(self.data.subtitle, systemImage: "")
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .lineLimit(2)
+                    .frame(width: 150)
+            }
+        }
+    }
+}
+
+struct ProgramsForYouCollectionView: View {
+    let data: ProgramsForYouDataModel
+    
+    var body: some View {
+        HStack{
+            VStack {
+                
+                Image(self.data.imageName)
+                    .resizable()
+                    .frame(width: 150, height: 150)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                
+                Label(self.data.chapterTitle, systemImage: "")
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Label(self.data.name, systemImage: "")
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .lineLimit(2)
