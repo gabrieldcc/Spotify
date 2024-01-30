@@ -123,6 +123,17 @@ struct YourProgramsCollectionView: View {
                     .resizable()
                     .frame(width: 150, height: 150)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
+                Label(self.data.genrer, systemImage: "")
+                    .foregroundStyle(.green)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Label(self.data.name, systemImage: "")
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Label(self.data.subtitle, systemImage: "")
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .lineLimit(2)
+                    .frame(width: 150)
             }
         }
     }
