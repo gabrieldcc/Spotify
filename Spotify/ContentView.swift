@@ -71,6 +71,12 @@ struct ContentView: View {
                     }
                 }
                 
+                Label("Seus programas", systemImage: "")
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.system(size: 28))
+                    .bold()
+                                    
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
                         ForEach(yourProgramsData) { item in
