@@ -62,7 +62,8 @@ let yourProgramsData: [YourProgramsDataModel] = [
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        ZStack {
+            Color.black.ignoresSafeArea()
             ScrollView {
                 LazyVGrid(columns: columns) {
                     ForEach(headerData) { item in
@@ -98,6 +99,7 @@ struct HeaderCollectionView: View {
                 Spacer()
                 
                 Text(self.data.name)
+                    .foregroundStyle(.white)
                 Spacer()
             }
             .padding(.bottom, 16)
