@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+
+struct HeaderDataModel: Identifiable {
+    let id: String
+    let name: String
+    let imageName: String
+}

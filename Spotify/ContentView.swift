@@ -6,88 +6,13 @@
 //
 
 import SwiftUI
+import AVKit
 
-struct HeaderDataModel: Identifiable {
-    let id: String
-    let name: String
-    let imageName: String
-}
-
-struct YourProgramsDataModel: Identifiable {
-    let id: String
-    let name: String
-    let imageName: String
-    let subtitle: String
-    let genrer: String
-}
-
-struct ProgramsForYouDataModel: Identifiable {
-    let id: String
-    let name: String
-    let imageName: String
-    let chapterTitle: String
-}
 
 let columns = [
     GridItem(.flexible()),
     GridItem(.flexible()),
 ]
-
-let headerData: [HeaderDataModel] = [
-    .init(id: "0", name: "NerdCast", imageName: "nerdcast"),
-    .init(id: "1", name: "Naruhodo", imageName: "naruhodo"),
-    .init(id: "2", name: "Achismos", imageName: "achismos"),
-    .init(id: "3", name: "Dev sem fronteiras", imageName: "dev-sem-fronteiras")
-]
-
-let yourProgramsData: [YourProgramsDataModel] = [
-        .init(id: "0",
-          name: "NerdCast",
-          imageName: "nerdcast",
-          subtitle: "Show - b9, Naruhodo, Ken Fujioka",
-          genrer: "Educação"),
-    
-        .init(id: "1",
-              name: "Naruhodo",
-              imageName: "naruhodo",
-              subtitle: "Show - b9, Naruhodo, Ken Fujioka",
-              genrer: "Educação"),
-    
-        .init(id: "2",
-              name: "Naruhodo",
-              imageName: "achismos",
-              subtitle: "Show - b9, Naruhodo, Ken Fujioka",
-              genrer: "Educação"),
-    
-        .init(id: "3",
-              name: "Naruhodo",
-              imageName: "dev-sem-fronteiras",
-              subtitle: "Show - b9, Naruhodo, Ken Fujioka",
-              genrer: "Educação"),
-    
-]
-
-let programsForYouData: [ProgramsForYouDataModel] = [
-        .init(id: "0",
-              name: "Braincast",
-              imageName: "tem-que-acabar",
-              chapterTitle: "Tem que acabar"),
-        
-        .init(id: "1",
-              name: "Braincast",
-              imageName: "tem-que-acabar",
-              chapterTitle: "Tem que acabar"),
-        
-        .init(id: "2",
-              name: "Braincast",
-              imageName: "tem-que-acabar",
-              chapterTitle: "Tem que acabar"),
-        
-        .init(id: "3",
-              name: "Braincast",
-              imageName: "tem-que-acabar",
-              chapterTitle: "Tem que acabar"),
-    ]
 
 struct ContentView: View {
     var body: some View {
@@ -98,7 +23,7 @@ struct ContentView: View {
             ScrollView {
                 
                 LazyVGrid(columns: columns) {
-                    ForEach(headerData) { item in
+                    ForEach(HeaderDataSource.data) { item in
                         HeaderCollectionView(data: item)
                     }
                 }
@@ -106,12 +31,12 @@ struct ContentView: View {
                 Label("Seus programas", systemImage: "")
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.system(size: 28))
+                    .font(.system(size: 24))
                     .bold()
                                     
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
-                        ForEach(yourProgramsData) { item in
+                        ForEach(YourProgramsDataSource.data) { item in
                             YourProgramsCollectionView(data: item)
                         }
                     }
@@ -122,13 +47,29 @@ struct ContentView: View {
                 Label("Episódios pra você", systemImage: "")
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .font(.system(size: 28))
+                    .font(.system(size: 24))
                     .bold()
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
-                        ForEach(programsForYouData) { item in
+                        ForEach(ProgramsForYouDataSource.data) { item in
                             ProgramsForYouCollectionView(data: item)
+                        }
+                    }
+                }
+                
+                Spacer(minLength: 24)
+                
+                Label("Tocados recentemente", systemImage: "")
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.system(size: 24))
+                    .bold()
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 20) {
+                        ForEach(PlayedRecentlyDataSource.data) { item in
+                            PlayedRecentlyCollectionView(data: item)
                         }
                     }
                 }
@@ -156,8 +97,9 @@ struct HeaderCollectionView: View {
                 
                 Spacer()
                 
-                Text(self.data.name)
+                Label(self.data.name, systemImage: "")
                     .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 Spacer()
             }
             .padding(.bottom, 16)
@@ -219,6 +161,35 @@ struct ProgramsForYouCollectionView: View {
             }
         }
     }
+}
+
+struct PlayedRecentlyCollectionView: View {
+    let data: PlayedRecentlyDataModel
+    
+    var body: some View {
+        HStack{
+            VStack {
+                
+                Image(self.data.imageName)
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                
+                Label(self.data.name, systemImage: "")
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .frame(width: 100)
+            }
+        }
+    }
+}
+
+
+enum Tab: String, CaseIterable {
+    case house
+    case magnifyingglass
+    case book
+    case wifi
 }
 
 
