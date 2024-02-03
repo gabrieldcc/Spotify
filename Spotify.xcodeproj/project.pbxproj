@@ -23,6 +23,10 @@
 		65EE74E22B6D4D9800136185 /* YourProgramsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE74E12B6D4D9800136185 /* YourProgramsDataSource.swift */; };
 		65EE74E42B6D4DCA00136185 /* ProgramsForYouDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE74E32B6D4DCA00136185 /* ProgramsForYouDataSource.swift */; };
 		65EE74E62B6D4E0400136185 /* PlayedRecentlyDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE74E52B6D4E0400136185 /* PlayedRecentlyDataSource.swift */; };
+		65EE74EA2B6E449E00136185 /* PlayedRecentlyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE74E92B6E449E00136185 /* PlayedRecentlyCollectionView.swift */; };
+		65EE74EC2B6E44CE00136185 /* ProgramsForYouCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE74EB2B6E44CE00136185 /* ProgramsForYouCollectionView.swift */; };
+		65EE74EF2B6E456A00136185 /* YourProgramsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE74EE2B6E456A00136185 /* YourProgramsCollectionView.swift */; };
+		65EE74F22B6E45A400136185 /* HeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE74F12B6E45A400136185 /* HeaderCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +66,10 @@
 		65EE74E12B6D4D9800136185 /* YourProgramsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourProgramsDataSource.swift; sourceTree = "<group>"; };
 		65EE74E32B6D4DCA00136185 /* ProgramsForYouDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsForYouDataSource.swift; sourceTree = "<group>"; };
 		65EE74E52B6D4E0400136185 /* PlayedRecentlyDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedRecentlyDataSource.swift; sourceTree = "<group>"; };
+		65EE74E92B6E449E00136185 /* PlayedRecentlyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedRecentlyCollectionView.swift; sourceTree = "<group>"; };
+		65EE74EB2B6E44CE00136185 /* ProgramsForYouCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsForYouCollectionView.swift; sourceTree = "<group>"; };
+		65EE74EE2B6E456A00136185 /* YourProgramsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourProgramsCollectionView.swift; sourceTree = "<group>"; };
+		65EE74F12B6E45A400136185 /* HeaderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,12 +120,10 @@
 		65EE74722B694C2E00136185 /* Spotify */ = {
 			isa = PBXGroup;
 			children = (
+				65EE74E82B6E444700136185 /* Resources */,
+				65EE74E72B6E443000136185 /* View */,
 				65EE74DE2B6D4D3700136185 /* DataSource */,
 				65EE74D52B6D4CBF00136185 /* Models */,
-				65EE74732B694C2E00136185 /* SpotifyApp.swift */,
-				65EE74752B694C2E00136185 /* ContentView.swift */,
-				65EE74D32B6D4C0700136185 /* CustomTabBarApp.swift */,
-				65EE74772B694C3500136185 /* Assets.xcassets */,
 				65EE74792B694C3500136185 /* Preview Content */,
 			);
 			path = Spotify;
@@ -168,6 +174,44 @@
 				65EE74E52B6D4E0400136185 /* PlayedRecentlyDataSource.swift */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		65EE74E72B6E443000136185 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				65EE74752B694C2E00136185 /* ContentView.swift */,
+				65EE74732B694C2E00136185 /* SpotifyApp.swift */,
+				65EE74F02B6E458500136185 /* Tabbar */,
+				65EE74ED2B6E44DA00136185 /* CustomViews */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		65EE74E82B6E444700136185 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				65EE74772B694C3500136185 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		65EE74ED2B6E44DA00136185 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				65EE74E92B6E449E00136185 /* PlayedRecentlyCollectionView.swift */,
+				65EE74EB2B6E44CE00136185 /* ProgramsForYouCollectionView.swift */,
+				65EE74EE2B6E456A00136185 /* YourProgramsCollectionView.swift */,
+				65EE74F12B6E45A400136185 /* HeaderCollectionView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		65EE74F02B6E458500136185 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				65EE74D32B6D4C0700136185 /* CustomTabBarApp.swift */,
+			);
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,13 +347,17 @@
 				65EE74D72B6D4CCA00136185 /* HeaderDataModel.swift in Sources */,
 				65EE74DD2B6D4D1100136185 /* PlayedRecentlyDataModel.swift in Sources */,
 				65EE74E22B6D4D9800136185 /* YourProgramsDataSource.swift in Sources */,
+				65EE74EC2B6E44CE00136185 /* ProgramsForYouCollectionView.swift in Sources */,
+				65EE74F22B6E45A400136185 /* HeaderCollectionView.swift in Sources */,
 				65EE74762B694C2E00136185 /* ContentView.swift in Sources */,
 				65EE74D92B6D4CE500136185 /* YourProgramsDataModel.swift in Sources */,
 				65EE74D42B6D4C0700136185 /* CustomTabBarApp.swift in Sources */,
 				65EE74E62B6D4E0400136185 /* PlayedRecentlyDataSource.swift in Sources */,
 				65EE74E02B6D4D4500136185 /* HeaderDataSource.swift in Sources */,
 				65EE74DB2B6D4CFA00136185 /* ProgramsForYouDataModel.swift in Sources */,
+				65EE74EA2B6E449E00136185 /* PlayedRecentlyCollectionView.swift in Sources */,
 				65EE74742B694C2E00136185 /* SpotifyApp.swift in Sources */,
+				65EE74EF2B6E456A00136185 /* YourProgramsCollectionView.swift in Sources */,
 				65EE74E42B6D4DCA00136185 /* ProgramsForYouDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

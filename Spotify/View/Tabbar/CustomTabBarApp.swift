@@ -43,6 +43,13 @@ struct CustomTabBar_Previews: PreviewProvider {
 }
 
 
+enum Tab: String, CaseIterable {
+    case house
+    case magnifyingglass
+    case book
+    case wifi
+}
+
 //struct MainView: View {
 //    var body: some View {
 //        TabView {
