@@ -82,7 +82,7 @@ struct ContentView: View {
                 }
                 .padding()
             }.font(.system(size: 14))
-            
+                .padding(.top)
             Spacer()
             CustomTabBar(selectedTab: $selectedTab)
                 .frame(height: 70)
