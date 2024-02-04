@@ -13,11 +13,19 @@ let columns = [
 ]
 
 struct ContentView: View {
+    @State private var selectedTab: Tab = .house
+    
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
+    
+    
+    
     var body: some View {
-        ZStack {
+        ZStack(alignment: .bottom) {
             
             Color.black.ignoresSafeArea()
-            
+
             ScrollView {
                 
                 LazyVGrid(columns: columns) {
@@ -70,12 +78,18 @@ struct ContentView: View {
                             PlayedRecentlyCollectionView(data: item)
                         }
                     }
+                    
                 }
-                
                 .padding()
             }.font(.system(size: 14))
+            
+            Spacer()
+            CustomTabBar(selectedTab: $selectedTab)
+                .frame(height: 70)
+                .background(.black.opacity(0.9))
         }
     }
+
 }
 
 #Preview {

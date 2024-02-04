@@ -16,7 +16,7 @@ struct CustomTabBar: View {
     }
     
     var body: some View {
-        
+
         VStack {
             HStack {
                 ForEach(Tab.allCases, id: \.rawValue) { tab in
@@ -25,21 +25,29 @@ struct CustomTabBar: View {
                         .scaleEffect(selectedTab == tab ? 1.25 : 1.0)
                         .foregroundStyle(selectedTab == tab ? .red : .gray)
                         .font(.system(size: 22))
+                        .foregroundStyle(.black.opacity(0.7))
+                        .onTapGesture {
+                            withAnimation(.easeIn(duration: 0.1)) {
+                                selectedTab = tab
+                            }
+                        }
                     Spacer()
                 }
             }
         }.frame(width: nil, height: 60)
-            .background(.thinMaterial)
             .cornerRadius(10)
             .padding()
-        Text("Hello world")
     }
 }
 
-struct CustomTabBar_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomTabBar(selectedTab: .constant(.house))
-    }
+//struct CustomTabBar_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CustomTabBar(selectedTab: .constant(.house))
+//    }
+//}
+
+#Preview {
+    ContentView()
 }
 
 
