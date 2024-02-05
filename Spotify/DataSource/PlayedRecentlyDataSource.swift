@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 final class PlayedRecentlyDataSource {
     
     static let data: [PlayedRecentlyDataModel] = [

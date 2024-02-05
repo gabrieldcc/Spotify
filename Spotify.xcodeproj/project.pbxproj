@@ -27,6 +27,9 @@
 		65EE74EC2B6E44CE00136185 /* ProgramsForYouCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE74EB2B6E44CE00136185 /* ProgramsForYouCollectionView.swift */; };
 		65EE74EF2B6E456A00136185 /* YourProgramsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE74EE2B6E456A00136185 /* YourProgramsCollectionView.swift */; };
 		65EE74F22B6E45A400136185 /* HeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE74F12B6E45A400136185 /* HeaderCollectionView.swift */; };
+		65EE74F42B6FC9D400136185 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE74F32B6FC9D400136185 /* PlayerView.swift */; };
+		65EE74F62B6FCC0600136185 /* PlayerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE74F52B6FCC0600136185 /* PlayerDataSource.swift */; };
+		65EE74F82B6FCC7300136185 /* PlayerDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE74F72B6FCC7300136185 /* PlayerDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,9 @@
 		65EE74EB2B6E44CE00136185 /* ProgramsForYouCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramsForYouCollectionView.swift; sourceTree = "<group>"; };
 		65EE74EE2B6E456A00136185 /* YourProgramsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourProgramsCollectionView.swift; sourceTree = "<group>"; };
 		65EE74F12B6E45A400136185 /* HeaderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionView.swift; sourceTree = "<group>"; };
+		65EE74F32B6FC9D400136185 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		65EE74F52B6FCC0600136185 /* PlayerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataSource.swift; sourceTree = "<group>"; };
+		65EE74F72B6FCC7300136185 /* PlayerDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +167,7 @@
 				65EE74D82B6D4CE500136185 /* YourProgramsDataModel.swift */,
 				65EE74DA2B6D4CFA00136185 /* ProgramsForYouDataModel.swift */,
 				65EE74DC2B6D4D1100136185 /* PlayedRecentlyDataModel.swift */,
+				65EE74F72B6FCC7300136185 /* PlayerDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,6 +179,7 @@
 				65EE74E12B6D4D9800136185 /* YourProgramsDataSource.swift */,
 				65EE74E32B6D4DCA00136185 /* ProgramsForYouDataSource.swift */,
 				65EE74E52B6D4E0400136185 /* PlayedRecentlyDataSource.swift */,
+				65EE74F52B6FCC0600136185 /* PlayerDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -202,6 +210,7 @@
 				65EE74EB2B6E44CE00136185 /* ProgramsForYouCollectionView.swift */,
 				65EE74EE2B6E456A00136185 /* YourProgramsCollectionView.swift */,
 				65EE74F12B6E45A400136185 /* HeaderCollectionView.swift */,
+				65EE74F32B6FC9D400136185 /* PlayerView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -347,13 +356,16 @@
 				65EE74D72B6D4CCA00136185 /* HeaderDataModel.swift in Sources */,
 				65EE74DD2B6D4D1100136185 /* PlayedRecentlyDataModel.swift in Sources */,
 				65EE74E22B6D4D9800136185 /* YourProgramsDataSource.swift in Sources */,
+				65EE74F42B6FC9D400136185 /* PlayerView.swift in Sources */,
 				65EE74EC2B6E44CE00136185 /* ProgramsForYouCollectionView.swift in Sources */,
 				65EE74F22B6E45A400136185 /* HeaderCollectionView.swift in Sources */,
 				65EE74762B694C2E00136185 /* ContentView.swift in Sources */,
 				65EE74D92B6D4CE500136185 /* YourProgramsDataModel.swift in Sources */,
+				65EE74F82B6FCC7300136185 /* PlayerDataModel.swift in Sources */,
 				65EE74D42B6D4C0700136185 /* CustomTabBarApp.swift in Sources */,
 				65EE74E62B6D4E0400136185 /* PlayedRecentlyDataSource.swift in Sources */,
 				65EE74E02B6D4D4500136185 /* HeaderDataSource.swift in Sources */,
+				65EE74F62B6FCC0600136185 /* PlayerDataSource.swift in Sources */,
 				65EE74DB2B6D4CFA00136185 /* ProgramsForYouDataModel.swift in Sources */,
 				65EE74EA2B6E449E00136185 /* PlayedRecentlyCollectionView.swift in Sources */,
 				65EE74742B694C2E00136185 /* SpotifyApp.swift in Sources */,

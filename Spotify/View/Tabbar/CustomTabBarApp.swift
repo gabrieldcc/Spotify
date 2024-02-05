@@ -16,8 +16,8 @@ struct CustomTabBar: View {
     }
     
     var body: some View {
-
-        VStack {
+        
+        
             HStack {
                 ForEach(Tab.allCases, id: \.rawValue) { tab in
                     Spacer()
@@ -34,9 +34,6 @@ struct CustomTabBar: View {
                     Spacer()
                 }
             }
-        }.frame(width: nil, height: 60)
-            .cornerRadius(10)
-            .padding()
     }
 }
 

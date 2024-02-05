@@ -19,8 +19,6 @@ struct ContentView: View {
         UITabBar.appearance().isHidden = true
     }
     
-    
-    
     var body: some View {
         ZStack(alignment: .bottom) {
             
@@ -79,14 +77,16 @@ struct ContentView: View {
                         }
                     }
                     
-                }
-                .padding()
+                }.padding()
             }.font(.system(size: 14))
                 .padding(.top)
-            Spacer()
-            CustomTabBar(selectedTab: $selectedTab)
-                .frame(height: 70)
-                .background(.black.opacity(0.9))
+            VStack(spacing: 0) {
+                Spacer()
+                PlayerView(data: PlayerDataSource.data.first!)
+                CustomTabBar(selectedTab: $selectedTab)
+                    .frame(height: 70)
+                    .background(.black.opacity(0.9))
+            }
         }
     }
 
