@@ -78,8 +78,13 @@ struct ContentView: View {
                     }
                     
                 }.padding()
+                
+                Spacer().frame(height:  128)
+                
             }.font(.system(size: 14))
                 .padding(.top)
+            
+            
             VStack(spacing: 0) {
                 Spacer()
                 PlayerView(data: PlayerDataSource.data.first!)

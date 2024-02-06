@@ -11,9 +11,9 @@ import SwiftUI
 struct AutoScrollingTextView: View {
     @State private var scrollText: Bool = false
     private let text: String
-    private let textWidth: CGFloat =  550 // Largura total do texto
-    private let titleWidth: CGFloat =  280.0 // Largura visível da Label
-    private let titleHeight: CGFloat =  50.0 // Altura da Label
+    private let textWidth: CGFloat =  550
+    private let titleWidth: CGFloat =  300
+    private let titleHeight: CGFloat =  50.0
     
     init(text: String) {
         self.text = text

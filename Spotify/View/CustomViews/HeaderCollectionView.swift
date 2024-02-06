@@ -28,9 +28,14 @@ struct HeaderCollectionView: View {
                 Label(self.data.name, systemImage: "")
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .bold()
                 Spacer()
             }
             .padding(.bottom, 16)
         }
     }
+}
+
+#Preview {
+    ContentView()
 }
