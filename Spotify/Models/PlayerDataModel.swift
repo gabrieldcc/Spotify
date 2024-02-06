@@ -12,5 +12,6 @@ struct PlayerDataModel {
     var chapter: String
     var name: String
     var device: String
-    var playerStatus: String
+    var playImage: String
+    var pauseImage: String
 }

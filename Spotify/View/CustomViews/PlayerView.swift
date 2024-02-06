@@ -10,11 +10,15 @@ import SwiftUI
 
 struct PlayerView: View {
     
-    let data: PlayerDataModel
     var imageSize: CGFloat = 40
-    @State private var offset: CGFloat = 0
+    
+    let data: PlayerDataModel
     let playerColor = Color(red: 1.0, green:   0.6, blue:   0.3)
     let shadowColor = Color(red: 1.0, green:   0.6, blue:   0.3)
+    
+    @State private var isPlayTapped = false
+    @State private var offset: CGFloat = 0
+
 
     
     var body: some View {
@@ -36,11 +40,16 @@ struct PlayerView: View {
                 .foregroundColor(.white)
             
             Spacer()
-            Image(systemName: self.data.playerStatus)
-                .resizable()
-                .frame(width: 16, height: 16)
-                .foregroundColor(.white)
-                .padding(.trailing, 16)
+            
+            Button(action: {
+                isPlayTapped.toggle()
+            }) {
+                Image(systemName: isPlayTapped ? self.data.playImage : self.data.pauseImage)
+                    .resizable()
+                    .frame(width: 16, height: 16)
+                    .foregroundColor(.white)
+                    .padding(.trailing, 16)
+            }
             
         }.frame(maxWidth: .infinity)
             .frame(height: 60)
