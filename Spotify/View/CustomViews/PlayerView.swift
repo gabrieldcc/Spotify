@@ -12,6 +12,7 @@ struct PlayerView: View {
     
     let data: PlayerDataModel
     var imageSize: CGFloat = 40
+    @State private var offset: CGFloat = 0
     
     var body: some View {
         HStack(spacing: 8) {
@@ -19,10 +20,10 @@ struct PlayerView: View {
                 .resizable()
                 .frame(width: imageSize, height: imageSize)
                 .padding(.leading, 8)
+            
             Spacer()
             
-            Label(self.data.name, systemImage: "")
-                .foregroundStyle(.white)
+            AutoScrollingTextView(text: self.data.chapter)
             
             Image(self.data.device)
                 .resizable()
@@ -40,9 +41,12 @@ struct PlayerView: View {
             .background(.black).cornerRadius(10)
         
     }
+    
+    func calculateLabelWidth(text: String) -> CGFloat {
+        let boundingBox = text.boundingRect(with: .zero, options: .usesLineFragmentOrigin, attributes: [.font : UIFont.systemFont(ofSize: 16)], context: nil)
+        return boundingBox.width
+    }
 }
-
-
 
 #Preview {
     ContentView()

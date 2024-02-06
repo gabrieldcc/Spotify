@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		652571AF2B72BABD00AC05DB /* AutoScrollingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652571AE2B72BABD00AC05DB /* AutoScrollingTextView.swift */; };
 		65EE74742B694C2E00136185 /* SpotifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE74732B694C2E00136185 /* SpotifyApp.swift */; };
 		65EE74762B694C2E00136185 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EE74752B694C2E00136185 /* ContentView.swift */; };
 		65EE74782B694C3500136185 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65EE74772B694C3500136185 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		652571AE2B72BABD00AC05DB /* AutoScrollingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScrollingTextView.swift; sourceTree = "<group>"; };
 		65EE74702B694C2E00136185 /* Spotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65EE74732B694C2E00136185 /* SpotifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyApp.swift; sourceTree = "<group>"; };
 		65EE74752B694C2E00136185 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				65EE74EE2B6E456A00136185 /* YourProgramsCollectionView.swift */,
 				65EE74F12B6E45A400136185 /* HeaderCollectionView.swift */,
 				65EE74F32B6FC9D400136185 /* PlayerView.swift */,
+				652571AE2B72BABD00AC05DB /* AutoScrollingTextView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				65EE74E62B6D4E0400136185 /* PlayedRecentlyDataSource.swift in Sources */,
 				65EE74E02B6D4D4500136185 /* HeaderDataSource.swift in Sources */,
 				65EE74F62B6FCC0600136185 /* PlayerDataSource.swift in Sources */,
+				652571AF2B72BABD00AC05DB /* AutoScrollingTextView.swift in Sources */,
 				65EE74DB2B6D4CFA00136185 /* ProgramsForYouDataModel.swift in Sources */,
 				65EE74EA2B6E449E00136185 /* PlayedRecentlyCollectionView.swift in Sources */,
 				65EE74742B694C2E00136185 /* SpotifyApp.swift in Sources */,
