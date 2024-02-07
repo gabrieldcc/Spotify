@@ -28,12 +28,9 @@ struct PlayerView: View {
                 .frame(width: imageSize, height: imageSize)
                 .padding(.leading, 8)
                 .shadow(color: .black, radius:  10, x:  0, y:  10)
-            
-            Spacer()
-            
+                        
             AutoScrollingTextView(text: self.data.chapter)
         
-            
             Image(systemName: self.data.device)
                 .resizable()
                 .frame(width: 20, height: 20)

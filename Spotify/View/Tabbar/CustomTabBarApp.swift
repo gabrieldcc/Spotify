@@ -11,9 +11,6 @@ import SwiftUI
 struct CustomTabBar: View {
     
     @Binding var selectedTab: Tab
-    private var fillImage: String {
-        selectedTab.rawValue + ".fill"
-    }
     
     var body: some View {
         
@@ -21,9 +18,9 @@ struct CustomTabBar: View {
             HStack {
                 ForEach(Tab.allCases, id: \.rawValue) { tab in
                     Spacer()
-                    Image(systemName: selectedTab == tab ? fillImage : tab.rawValue)
+                    Image(systemName: tab.rawValue)
                         .scaleEffect(selectedTab == tab ? 1.25 : 1.0)
-                        .foregroundStyle(selectedTab == tab ? .red : .gray)
+                        .foregroundStyle(selectedTab == tab ? .white : .gray)
                         .font(.system(size: 22))
                         .foregroundStyle(.black.opacity(0.7))
                         .onTapGesture {
@@ -36,17 +33,6 @@ struct CustomTabBar: View {
             }
     }
 }
-
-//struct CustomTabBar_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CustomTabBar(selectedTab: .constant(.house))
-//    }
-//}
-
-#Preview {
-    ContentView()
-}
-
 
 enum Tab: String, CaseIterable {
     case house
@@ -70,3 +56,7 @@ enum Tab: String, CaseIterable {
 //        }
 //    }
 //}
+
+#Preview {
+    ContentView()
+}
