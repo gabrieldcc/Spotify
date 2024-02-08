@@ -13,27 +13,34 @@ struct YourProgramsCollectionView: View {
     
     var body: some View {
         HStack{
-            VStack {
+            VStack(spacing: 0) {
                 
                 Image(self.data.imageName)
                     .resizable()
                     .frame(width: 150, height: 150)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
-                
+                Spacer()
                 Label(self.data.genrer, systemImage: "")
                     .foregroundStyle(.green)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .bold()
                 
                 Label(self.data.name, systemImage: "")
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    .bold()
                 
                 Label(self.data.subtitle, systemImage: "")
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .lineLimit(2)
-                    .frame(width: 150)
+                    .lineLimit(2, reservesSpace: true)
+                    .frame(width: 150, height: 40)
+                Spacer()
             }
         }
     }
+}
+
+#Preview {
+    ContentView()
 }
