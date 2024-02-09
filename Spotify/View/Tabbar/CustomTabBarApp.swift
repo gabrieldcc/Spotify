@@ -13,11 +13,12 @@ struct CustomTabBar: View {
     @Binding var selectedTab: Tab
     
     var body: some View {
-        
-            HStack {
-                ForEach(Tab.allCases, id: \.rawValue) { tab in
+        HStack {
+            ForEach(Tab.allCases, id: \.rawValue) { tab in
+                Spacer()
+                VStack {
                     Spacer()
-                    Image(systemName: tab.rawValue)
+                    Image(systemName: "\(tab)")
                         .scaleEffect(selectedTab == tab ? 1.25 : 1.0)
                         .foregroundStyle(selectedTab == tab ? .white : .gray)
                         .font(.system(size: 22))
@@ -27,18 +28,27 @@ struct CustomTabBar: View {
                                 selectedTab = tab
                             }
                         }
-                    Spacer()
+                    Label(tab.rawValue, systemImage: "")
+                        .font(.system(size: 12))
+                        .foregroundStyle(selectedTab == tab ? .white : .gray)
+                        .scaleEffect(selectedTab == tab ? 1.25 : 1.0)
                 }
+                Spacer()
             }
+        }
     }
 }
 
+
+
 enum Tab: String, CaseIterable {
-    case house
-    case magnifyingglass
-    case book
-    case wifi
+    case house = "Início"
+    case magnifyingglass = "Buscar"
+    case book = "Biblioteca"
+    case wifi = "Premium"
 }
+
+
 
 //struct MainView: View {
 //    var body: some View {
