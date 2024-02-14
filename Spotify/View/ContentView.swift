@@ -20,10 +20,10 @@ struct ContentView: View {
     }
     
     var body: some View {
+        TopBarView()
         ZStack(alignment: .bottom) {
-            
             Color.black.ignoresSafeArea()
-
+            
             ScrollView {
                 
                 LazyVGrid(columns: columns) {
@@ -37,7 +37,7 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .font(.system(size: 24))
                     .bold()
-                                    
+                
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 20) {
                         ForEach(YourProgramsDataSource.data) { item in
@@ -79,6 +79,8 @@ struct ContentView: View {
                     
                 }.padding()
                 
+                AnimatedPlayerView()
+                
                 Spacer().frame(height:  128)
                 
             }.font(.system(size: 14))
@@ -89,12 +91,12 @@ struct ContentView: View {
                 Spacer()
                 PlayerView(data: PlayerDataSource.data.first!)
                 CustomTabBar(selectedTab: $selectedTab)
-                    .frame(height: 70)
+                    .frame(height: 60)
                     .background(.black.opacity(0.9))
             }
         }
     }
-
+    
 }
 
 #Preview {

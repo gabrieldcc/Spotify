@@ -25,7 +25,7 @@ struct AutoScrollingTextView: View {
                 Text(text)
                     .frame(minWidth: titleWidth, minHeight: titleHeight, alignment: .center)
                     .offset(x: (titleWidth < textWidth) ? (scrollText ? -(textWidth - titleWidth) : titleWidth) :  0, y:  0)
-                    .animation(Animation.linear(duration:  10).repeatForever(autoreverses: false), value: scrollText)
+                    .animation(Animation.linear(duration:  10).repeatForever(autoreverses: true), value: scrollText)
                     .onAppear {
                         self.scrollText.toggle()
                     }

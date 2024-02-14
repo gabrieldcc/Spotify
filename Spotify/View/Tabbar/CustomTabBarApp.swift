@@ -17,9 +17,7 @@ struct CustomTabBar: View {
             ForEach(Tab.allCases, id: \.rawValue) { tab in
                 Spacer()
                 VStack {
-                    Spacer()
                     Image(systemName: "\(tab)")
-                        .scaleEffect(selectedTab == tab ? 1.25 : 1.0)
                         .foregroundStyle(selectedTab == tab ? .white : .gray)
                         .font(.system(size: 22))
                         .foregroundStyle(.black.opacity(0.7))
@@ -28,10 +26,12 @@ struct CustomTabBar: View {
                                 selectedTab = tab
                             }
                         }
+                    
                     Label(tab.rawValue, systemImage: "")
                         .font(.system(size: 12))
                         .foregroundStyle(selectedTab == tab ? .white : .gray)
-                        .scaleEffect(selectedTab == tab ? 1.25 : 1.0)
+                        .bold()
+                    
                 }
                 Spacer()
             }
